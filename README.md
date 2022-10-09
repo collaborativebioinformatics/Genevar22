@@ -6,8 +6,8 @@ https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-l
 
 ### Installing GeneVar2 (https://github.com/collaborativebioinformatics/GeneVar2)
 
-```install.packages(c("clusterProfiler", "pathview", "org.Hs.eg.db", "enrichplot", "DOSE", "ggnewscale", "cowplot", "tidyverse", "plyr", "ReactomePA", "reactome.db", "KEGG.db", "dplyr", "tidyr", "shiny"))```
+`install.packages(c("clusterProfiler", "pathview", "org.Hs.eg.db", "enrichplot", "DOSE", "ggnewscale", "cowplot", "tidyverse", "plyr", "ReactomePA", "reactome.db", "KEGG.db", "dplyr", "tidyr", "shiny"))`
 
-```install.packages("BiocManager")
-BiocManager::install("GenomicRanges")
-BiocManager::install("VariantAnnotation")```
+`install.packages("BiocManager")`
+`BiocManager::install("GenomicRanges")`
+`BiocManager::install("VariantAnnotation")`
