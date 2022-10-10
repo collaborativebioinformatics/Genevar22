@@ -2,9 +2,7 @@
 
 ## WorkFlow
 
-
-
-
+![](genevar-22.png)
 
 ### Running RStudio on DNAnexus
 
