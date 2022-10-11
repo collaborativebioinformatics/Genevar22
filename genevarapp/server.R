@@ -24,9 +24,10 @@ vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi')
 getVars <- function(chr, start, end){
   param <- GRanges(chr, IRanges(start, end))
   message("What is param: ", param)
-  message("What is vars.tbx ", class(vars.tbx))
   res <- scanTabix(vars.tbx, param=param)
+  message("What is res: ", res)
   vars.df = read.csv(textConnection(res[[1]]), sep="\t", header=FALSE)
+  message("What is vars.df: ", vars.df)
   colnames(vars.df) = c('chr', 'start', 'end', 'variant_id', 'type', 'af', 'clinical_sv', 'clinical_snv')
   vars.df %>% mutate(size=end-start)
 }
