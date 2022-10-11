@@ -7,10 +7,6 @@
 
 ### We present GeneVar(2022 update): an open access, gene-centric data browser to support SV analysis
 
-## Introduction
-
-Next-generation sequencing (NGS) provides the ability to sequence extended genomic regions or whole-genomes cheaply and rapidly, making it a powerful technique to uncover the genetic architecture of diseases. However, significant challenges remain, including interpretation and prioritization of the found variants and setting up the appropriate analysis pipeline to cover the necessary spectrum of genetic factors (such as expansions, repeats, insertions/deletions (indels), structural variants (SVs) and point mutations). For those outside the immediate field of genetics – researchers, hospital staff, general practitioners, and, increasingly, patients who have paid to have their genome sequenced privately – the interpretation of findings is particularly challenging. Although various tools for the prediction of the pathogenicity of a protein-changing variant are available, they do not always agree, further compounding the problem. Furthermore, with the increasing availability of NGS data, non-specialists are obtaining genomic information without a corresponding ability to analyse and interpret it, as the relevance of novel or existing variants is not always apparent. The same is true of SV analysis, the interpretation of which also requires care related to sample and platform selection, quality control, statistical analysis, results prioritisation, and replication strategy
-
 ## Goals
 
 [GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open access, gene centric data browser for SV analysis. GeneVar takes as input a gene name or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. [Clinical SV](https://github.com/collaborativebioinformatics/clinical_SVs) is an open access software that can annotate vcf files with clinically relavant information as well as provide useful visualizations such as disease ontology plots.
@@ -19,16 +15,23 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 GeneVar(2022 update) has the added functionality of looking for structural variants based upon disease/phenotype ontology.
 
-## WorkFlow
-
-![](genevar-22.png)
-
 ## Description
 
 There are three ways to interact with GeneVar(2022 update):
 1. First, GeneVar takes an input of a gene name or an ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. 
 2. Second, users can upload variant call format (VCF) files from their analysis pipelines as input to GeneVar. GeneVar will output clinically relevant information, as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. 
 3. Third, users can submit phenotype or disease ontology terms and retrieve relevant structural variants.
+
+
+## WorkFlow
+
+![](genevar-22.png)
+
+
+## Background
+
+Next-generation sequencing (NGS) provides the ability to sequence extended genomic regions or whole-genomes cheaply and rapidly, making it a powerful technique to uncover the genetic architecture of diseases. However, significant challenges remain, including interpretation and prioritization of the found variants and setting up the appropriate analysis pipeline to cover the necessary spectrum of genetic factors (such as expansions, repeats, insertions/deletions (indels), structural variants (SVs) and point mutations). For those outside the immediate field of genetics – researchers, hospital staff, general practitioners, and, increasingly, patients who have paid to have their genome sequenced privately – the interpretation of findings is particularly challenging. Although various tools for the prediction of the pathogenicity of a protein-changing variant are available, they do not always agree, further compounding the problem. Furthermore, with the increasing availability of NGS data, non-specialists are obtaining genomic information without a corresponding ability to analyse and interpret it, as the relevance of novel or existing variants is not always apparent. The same is true of SV analysis, the interpretation of which also requires care related to sample and platform selection, quality control, statistical analysis, results prioritisation, and replication strategy
+
 
 ## Web-App Preview
 
