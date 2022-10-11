@@ -5,7 +5,7 @@
   <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
 </p>
 
-## Contributers (over three hackathons in random order)
+## Contributors (over three hackathons in random order)
 Tim Hefferon (Lead),	Rupesh Kesharwani,	Kimberly Walker,	Jedrzej Kubica,	Jean Monlong,	Irenaeus Chan,	Fritz Sedlazeck,	Ben Busby,	Barry Zorman,	Ahmad Al Khleifat,	 Weiyu Zhou, 	 Tingting Zhao,	 Priya Lakra, 	 Kimberly Walker, 	 Jianzhi (Quentin) Yang, 	 Jean Monlong, 	 Haowei Du,	 Gaojianyong Wang,	 Divya Kalra, 	 David Henke, 	Neda Ghohabi
 
 
