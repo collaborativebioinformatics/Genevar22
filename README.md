@@ -1,4 +1,4 @@
-> # GeneVar(2022 update)
+> ## GeneVar(2022 update)
 
 <p align="center">
   <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
