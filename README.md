@@ -13,20 +13,20 @@ name (email)
 
 ## Goals
 
-[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open access, gene centric data browser for SV analysis. GeneVar takes as input a gene name or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
+[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
 
-[Clinical SV](https://github.com/collaborativebioinformatics/clinical_SVs) is an open access software that can annotate vcf files with clinically relavant information as well as provide useful visualizations such as disease ontology plots.
+[Clinical SV](https://github.com/collaborativebioinformatics/clinical_SVs) is an open access software that can annotate variant call format (VCF) files with clinically relavant information as well as provide useful visualizations such as disease ontology plots.
 
-[GeneVar2](https://github.com/collaborativebioinformatics/GeneVar2) was the integration of these two apps which work together to facilitate reporting of structural variations data. GeneVar tool is intended to have a clinical focus, informing the interpretation of SV pertaining to a gene name. In addition, GeneVar gives the user the option to upload genotyping data and produces a report, file, and genome browser session that informs the user of all structural variants overlapping the gene, including any non-coding regulatory elements affecting expression of the gene.
+[GeneVar2](https://github.com/collaborativebioinformatics/GeneVar2) was the integration of these two apps which work together to facilitate reporting of structural variations data. GeneVar tool is intended to have a clinical focus, informing the interpretation of SV pertaining to the gene name. In addition, GeneVar gives the user the option to upload genotyping data and produces a report, a file, and a genome browser session that informs the user of all SVs overlapping the gene, including any non-coding regulatory elements affecting expression of the gene.
 
-GeneVar(2022 update) has the added functionality of looking for structural variants based upon disease/phenotype ontology.
+GeneVar(2022 update) has the added functionality of looking for SVs based upon disease/phenotype ontology.
 
 ## How it works?
 
 There are three ways to interact with GeneVar(2022 update):
-- First, GeneVar takes an input of a gene name or an ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. 
-- Second, users can upload variant call format (VCF) files from their analysis pipelines as input to GeneVar. GeneVar will output clinically relevant information, as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. 
-- Third, users can submit phenotype or disease ontology terms and retrieve relevant structural variants.
+- First, GeneVar takes a gene name or a gene ID as an input and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. 
+- Second, users can upload VCF files from their analysis pipelines as an input to GeneVar. GeneVar will output clinically relevant information, as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. 
+- Third, users can submit phenotype or disease ontology terms and retrieve relevant SVs.
 
 
 ## WorkFlow
