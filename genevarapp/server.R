@@ -23,11 +23,8 @@ vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi')
 
 getVars <- function(chr, start, end){
   param <- GRanges(chr, IRanges(start, end))
-  message("What is param: ", param)
   res <- scanTabix(vars.tbx, param=param)
-  message("What is res: ", res)
   vars.df = read.csv(textConnection(res[[1]]), sep="\t", header=FALSE)
-  message("What is vars.df: ", vars.df)
   colnames(vars.df) = c('chr', 'start', 'end', 'variant_id', 'type', 'af', 'clinical_sv', 'clinical_snv')
   vars.df %>% mutate(size=end-start)
 }
@@ -104,9 +101,7 @@ server <- function(input, output, session) {
       return(tibble())
     }
     ## get variants for the gene's region
-    message('Pretty Sure it will fail here')
     vars.df = getVars(gene.sel$chr[1], min(gene.sel$start), max(gene.sel$end))
-    message('Test Fail')
     message(nrow(vars.df), ' variants')
     ## overlap with genes
     vars.sel = overlapVarsGenes(vars.df, gene.sel)
@@ -214,7 +209,7 @@ server <- function(input, output, session) {
       incProgress(0.5, detail = "50% complete")
       file.create("input_location.txt")
       writeLines(input$file$datapath, "input_location.txt")
-      source_python('retrieve.py')
+      #source_python('retrieve.py')
       incProgress(0.75, detail = "75% complete")
       ## gene annotation from csv
 
@@ -325,4 +320,3 @@ server <- function(input, output, session) {
 
 
 }
-
