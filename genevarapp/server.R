@@ -23,6 +23,8 @@ vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi')
 
 getVars <- function(chr, start, end){
   param <- GRanges(chr, IRanges(start, end))
+  message("What is param: ", param)
+  message("What is vars.tbx ", class(vars.tbx))
   res <- scanTabix(vars.tbx, param=param)
   vars.df = read.csv(textConnection(res[[1]]), sep="\t", header=FALSE)
   colnames(vars.df) = c('chr', 'start', 'end', 'variant_id', 'type', 'af', 'clinical_sv', 'clinical_snv')
@@ -96,12 +98,10 @@ server <- function(input, output, session) {
     message('Gene: ', genen)
     ## find gene
     gene.sel = genes.df %>% filter(gene_id==genen | gene_name==genen | transcript_id==genen)
-    message('Gene Found')
     if(nrow(gene.sel)==0){
       message('no gene, return')
       return(tibble())
     }
-    message('If Statement Passed')
     ## get variants for the gene's region
     message('Pretty Sure it will fail here')
     vars.df = getVars(gene.sel$chr[1], min(gene.sel$start), max(gene.sel$end))
