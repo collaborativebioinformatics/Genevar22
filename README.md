@@ -1,4 +1,4 @@
-# GeneVar: Effortless SV annotation and interpretation 
+# GeneVar: The SV data browser
 
 ![](images/GeneVar2-logo.jpeg)
 
