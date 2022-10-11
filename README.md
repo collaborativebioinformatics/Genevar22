@@ -1,4 +1,6 @@
-# Genevar22
+# GeneVar: Effortless SV annotation and interpretation 
+
+![](images/GeneVar2-logo.jpeg)
 
 ## WorkFlow
 
