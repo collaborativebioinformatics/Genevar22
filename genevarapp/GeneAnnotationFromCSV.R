@@ -41,7 +41,7 @@ suppressWarnings(suppressMessages(library(tidyverse, quietly = T)))
 suppressWarnings(suppressMessages(library(plyr, quietly = T)))
 suppressWarnings(suppressMessages(library(ReactomePA, quietly = T)))
 suppressWarnings(suppressMessages(library(reactome.db, quietly = T)))
-suppressWarnings(suppressMessages(library(KEGG.db, quietly = T)))
+suppressWarnings(suppressMessages(library(KEGGREST, quietly = T)))
 suppressWarnings(suppressMessages(library(dplyr, quietly = T)))
 suppressWarnings(suppressMessages(library(tidyr, quietly = T)))
 cat("done.\n")
@@ -188,7 +188,7 @@ enrichedGene <- function (listEntrezID, showCategory=20, chrom, svtype){
                                 readable = T, qvalueCutoff = 0.1, minGSSize = 1)
   results[[3]] <- reactomePath
   keggpath <- enrichKEGG(gene= listEntrezID, pvalueCutoff = pvalueCutoff,
-                         use_internal_data = T, minGSSize = 1, qvalueCutoff = 0.1)
+                         use_internal_data = F, minGSSize = 1, qvalueCutoff = 0.1)
   results[[4]] <- keggpath
   ## pathway plots1
   if(as.double(summary(as.data.frame(reactomePath)$geneID)[1]) > 0) {
