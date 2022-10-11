@@ -64,6 +64,12 @@ https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-l
 
 https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-let-tutorials/running-rstudio-shiny-server-and-apps
 
+## References
+
+1. https://github.com/collaborativebioinformatics/GeneVar
+2. https://github.com/collaborativebioinformatics/clinical_SVs
+3. https://github.com/collaborativebioinformatics/GeneVar2
+
 ## Future Directions 
 - [ ] Permanently Hosted Application
   - [ ] Server
