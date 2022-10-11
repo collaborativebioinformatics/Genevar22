@@ -24,8 +24,7 @@ There are three ways to interact with GeneVar(2022 update):
 
 
 ## WorkFlow
-
-![](genevar-22.png)
+<img width="1091" alt="genevar_logo_green" src="https://user-images.githubusercontent.com/82537630/195189567-7220b953-8f89-490d-9dc3-aca30c279656.png">
 
 
 ## Background
