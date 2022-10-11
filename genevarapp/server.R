@@ -96,12 +96,16 @@ server <- function(input, output, session) {
     message('Gene: ', genen)
     ## find gene
     gene.sel = genes.df %>% filter(gene_id==genen | gene_name==genen | transcript_id==genen)
+    message('Gene Found')
     if(nrow(gene.sel)==0){
       message('no gene, return')
       return(tibble())
     }
+    message('If Statement Passed')
     ## get variants for the gene's region
+    message('Pretty Sure it will fail here')
     vars.df = getVars(gene.sel$chr[1], min(gene.sel$start), max(gene.sel$end))
+    message('Test Fail')
     message(nrow(vars.df), ' variants')
     ## overlap with genes
     vars.sel = overlapVarsGenes(vars.df, gene.sel)
@@ -320,3 +324,4 @@ server <- function(input, output, session) {
 
 
 }
+
