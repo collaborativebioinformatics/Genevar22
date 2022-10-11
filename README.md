@@ -7,6 +7,11 @@
 
 ### We present GeneVar(2022 update): STru
 
+## Contributors
+
+name (email)
+
+
 ## Goals
 
 [GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open access, gene centric data browser for SV analysis. GeneVar takes as input a gene name or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
@@ -49,8 +54,4 @@ https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-l
 ### Developing an RShiny Applet
 
 https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-let-tutorials/running-rstudio-shiny-server-and-apps
-
-## Contributors
-
-name (email)
 
