@@ -11,7 +11,7 @@
 name (email)
 
 
-## Goals
+## Goal
 
 [GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
 
@@ -19,7 +19,7 @@ name (email)
 
 [GeneVar2](https://github.com/collaborativebioinformatics/GeneVar2) was the integration of these two apps which work together to facilitate reporting of structural variations data. GeneVar tool is intended to have a clinical focus, informing the interpretation of SV pertaining to the gene name. In addition, GeneVar gives the user the option to upload genotyping data and produces a report, a file, and a genome browser session that informs the user of all SVs overlapping the gene, including any non-coding regulatory elements affecting expression of the gene.
 
-GeneVar(2022 update) has the added functionality of looking for SVs based upon disease/phenotype ontology.
+**GeneVar(2022 update)** has the added functionality of looking for SVs based upon disease/phenotype ontology.
 
 ## How it works?
 
