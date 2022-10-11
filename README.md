@@ -55,3 +55,7 @@ https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-l
 
 https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-let-tutorials/running-rstudio-shiny-server-and-apps
 
+## Future Directions 
+- Permanently Hosted Application
+- Server
+- Command Line Tool
