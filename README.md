@@ -5,22 +5,6 @@
   <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
 </p>
 
-
-## Contributors
-
-1. Tim Hefferon 
-2. Ahmad Al Khleifat 
-3. Rupesh Kesharwani `(Baylor College of Medicine,TX, USA)`
-4. Divya Kalra 
-5. Kimberly Walker 
-6. Priya Lakra 
-7. Jianzhi(Quentin) Yang 
-8. Jean Monlong 
-9. David Henke 
-10. Weiyu Zhou 
-
-
-
 ## Goal
 
 [GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
