@@ -58,6 +58,12 @@ https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-l
 2. https://github.com/collaborativebioinformatics/clinical_SVs
 3. https://github.com/collaborativebioinformatics/GeneVar2
 
+Papers associated with the development of GeneVar:
+
+McCartney AM, Mahmoud M, Jochum M et al. An international virtual hackathon to build tools for the analysis of structural variants within species ranging from coronaviruses to vertebrates F1000Research 2021, 10:246 (https://doi.org/10.12688/f1000research.51477.2) https://f1000research.com/articles/10-246
+Walker K, Kalra D, Lowdon R et al. The third international hackathon for applying insights into large-scale genomic composition to use cases in a wide range of organisms. F1000Research 2022, 11:530 (https://doi.org/10.12688/f1000research.110194.1) https://f1000research.com/articles/11-530
+
+
 ## Future Directions 
 - [ ] Permanently Hosted Application
   - [ ] Server
