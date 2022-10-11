@@ -22,7 +22,7 @@ Next-generation sequencing provides the ability to sequence extended genomic reg
 
 GeneVar2 was the integration of these two apps which work together to facilitate reporting of structural variations data. GeneVar tool is intended to have a clinical focus, informing the interpretation of SV pertaining to a gene name. In addition, GeneVar gives the user the option to upload genotyping data and produces a report, file, and genome browser session that informs the user of all structural variants overlapping the gene, including any non-coding regulatory elements affecting expression of the gene.
 
-GeneVar(2022 update) has the added funcionality of looking for structural variants based upon disease/phenotype ontology.
+GeneVar(2022 update) has the added functionality of looking for structural variants based upon disease/phenotype ontology.
 
 
 ## Description
