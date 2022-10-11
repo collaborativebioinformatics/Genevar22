@@ -5,6 +5,32 @@
   <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
 </p>
 
+## Contributers (over three hackathons in random order)
+Tim Hefferon (Lead)
+Rupesh Kesharwani
+Kimberly Walker
+Jedrzej Kubica
+Jean Monlong
+Irenaeus Chan
+Fritz Sedlazeck
+Ben Busby
+Barry Zorman
+Ahmad Al Khleifat
+Weiyu Zhou 
+Tingting Zhao
+Priya Lakra 
+Kimberly Walker 
+Jianzhi (Quentin)Yang 
+Jean Monlong 
+Haowei Du
+Gaojianyong Wang
+Divya Kalra 
+David Henke 
+Neda Ghohabi
+
+![image](https://user-images.githubusercontent.com/72624236/195193408-c0ac933b-3cdf-4148-ae97-21db60ebf21a.png)
+
+
 ## Goal
 
 [GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
