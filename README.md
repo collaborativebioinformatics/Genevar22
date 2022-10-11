@@ -5,7 +5,7 @@
  
 </p>
 
-### We present GeneVar(2022 update): STru
+We present GeneVar(2022 update): Gene-Centric Data Browser for Structural Variant Analysis
 
 ## Contributors
 
