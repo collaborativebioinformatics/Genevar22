@@ -6,7 +6,7 @@
 </p>
 
 ## Contributers (over three hackathons in random order)
-Tim Hefferon (Lead)	Rupesh Kesharwani	Kimberly Walker	Jedrzej Kubica	Jean Monlong	Irenaeus Chan	Fritz Sedlazeck	Ben Busby	Barry Zorman	Ahmad Al Khleifat	 Weiyu Zhou 	 Tingting Zhao	 Priya Lakra 	 Kimberly Walker 	 Jianzhi(Quentin) Yang 	 Jean Monlong 	 Haowei Du	 Gaojianyong Wang	 Divya Kalra 	 David Henke 	Neda Ghohabi
+Tim Hefferon (Lead),	Rupesh Kesharwani,	Kimberly Walker,	Jedrzej Kubica,	Jean Monlong,	Irenaeus Chan,	Fritz Sedlazeck,	Ben Busby,	Barry Zorman,	Ahmad Al Khleifat,	 Weiyu Zhou, 	 Tingting Zhao,	 Priya Lakra, 	 Kimberly Walker, 	 Jianzhi (Quentin) Yang, 	 Jean Monlong, 	 Haowei Du,	 Gaojianyong Wang,	 Divya Kalra, 	 David Henke, 	Neda Ghohabi
 
 
 
