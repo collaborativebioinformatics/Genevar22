@@ -1,11 +1,9 @@
-# GeneVar
+> # GeneVar(2022 update)
 
 <p align="center">
-  <img width="300" height="300" src="https://user-images.githubusercontent.com/82537630/195174788-6acc9837-e610-4ad2-8211-48a19debf30f.png">
- 
+  <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
 </p>
 
-We present GeneVar(2022 update): Gene-Centric Data Browser for Structural Variant Analysis
 
 ## Contributors
 
