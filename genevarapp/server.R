@@ -213,7 +213,7 @@ server <- function(input, output, session) {
       incProgress(0.5, detail = "50% complete")
       file.create("input_location.txt")
       writeLines(input$file$datapath, "input_location.txt")
-      source_python('retrieve.py')
+      #source_python('retrieve.py')
       incProgress(0.75, detail = "75% complete")
       ## gene annotation from csv
 
@@ -324,4 +324,3 @@ server <- function(input, output, session) {
 
 
 }
-
