@@ -1,4 +1,4 @@
-# GeneVar: Gene-Centric Data Browser for Structural Variant Analysis
+# GeneVar
 
 <p align="center">
   <img width="300" height="300" src="https://user-images.githubusercontent.com/82537630/195174788-6acc9837-e610-4ad2-8211-48a19debf30f.png">
