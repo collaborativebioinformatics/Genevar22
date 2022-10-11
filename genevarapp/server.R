@@ -19,18 +19,16 @@ pli.df = read.table('pli.gene.tsv.gz', as.is=TRUE, header=TRUE)
 genes = unique(c(genes.df$gene_id, genes.df$gene_name, genes.df$transcript_id))
 ## genes = unique(c('ENST00000400454.6', genes))
 
-print(file.info("dbvar38.ann.tsv.gz"))
-print(file.info("dbvar38.ann.tsv.gz.tbi"))
-vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi')
+if (file.info("dbvar38.ann.tsv.gz")$size < 150000000){
+  message("git lfs clone did not download dbvar38.ann.tsv.gz properly.")
+} else {
+  vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi') 
+}
 
 getVars <- function(chr, start, end){
   param <- GRanges(chr, IRanges(start, end))
-  message("What is param: ", param)
-  print(vars.tbx)
   res <- scanTabix(vars.tbx, param=param)
-  message("What is res: ", res)
   vars.df = read.csv(textConnection(res[[1]]), sep="\t", header=FALSE)
-  message("What is vars.df: ", vars.df)
   colnames(vars.df) = c('chr', 'start', 'end', 'variant_id', 'type', 'af', 'clinical_sv', 'clinical_snv')
   vars.df %>% mutate(size=end-start)
 }
@@ -107,9 +105,7 @@ server <- function(input, output, session) {
       return(tibble())
     }
     ## get variants for the gene's region
-    message('Pretty Sure it will fail here')
     vars.df = getVars(gene.sel$chr[1], min(gene.sel$start), max(gene.sel$end))
-    message('Test Fail')
     message(nrow(vars.df), ' variants')
     ## overlap with genes
     vars.sel = overlapVarsGenes(vars.df, gene.sel)
