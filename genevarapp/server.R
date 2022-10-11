@@ -19,11 +19,14 @@ pli.df = read.table('pli.gene.tsv.gz', as.is=TRUE, header=TRUE)
 genes = unique(c(genes.df$gene_id, genes.df$gene_name, genes.df$transcript_id))
 ## genes = unique(c('ENST00000400454.6', genes))
 
+print(file.info("dbvar38.ann.tsv.gz"))
+print(file.info("dbvar38.ann.tsv.gz.tbi"))
 vars.tbx <- TabixFile('dbvar38.ann.tsv.gz', index='dbvar38.ann.tsv.gz.tbi')
 
 getVars <- function(chr, start, end){
   param <- GRanges(chr, IRanges(start, end))
   message("What is param: ", param)
+  print(vars.tbx)
   res <- scanTabix(vars.tbx, param=param)
   message("What is res: ", res)
   vars.df = read.csv(textConnection(res[[1]]), sep="\t", header=FALSE)
