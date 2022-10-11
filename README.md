@@ -8,7 +8,17 @@
 
 ## Contributors
 
-name (email)
+1. Tim Hefferon 
+2. Ahmad Al Khleifat 
+3. Rupesh Kesharwani `(Baylor College of Medicine,TX, USA)`
+4. Divya Kalra 
+5. Kimberly Walker 
+6. Priya Lakra 
+7. Jianzhi(Quentin) Yang 
+8. Jean Monlong 
+9. David Henke 
+10. Weiyu Zhou 
+
 
 
 ## Goal
