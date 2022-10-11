@@ -1,6 +1,6 @@
 # GeneVar: The SV data browser
 
-![](images/GeneVar2-logo.jpeg)
+![Logo GeneVar](https://user-images.githubusercontent.com/72624236/195152412-c8265ee7-783b-4d5e-b029-83bd6f1dfad8.jpg)
 
 ## WorkFlow
 
