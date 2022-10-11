@@ -25,7 +25,10 @@ GeneVar(2022 update) has the added functionality of looking for structural varia
 
 ## Description
 
-There are three ways to interact with GeneVar(2022 update). First, GeneVar takes an input of a gene name or an ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. Second, users can upload variant call format (VCF) files from their analysis pipelines as input to GeneVar. GeneVar will output clinically relevant information as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. Third, users can submit phenotype or disease ontology terms and retrieve relevant structural variants.
+There are three ways to interact with GeneVar(2022 update):
+1. First, GeneVar takes an input of a gene name or an ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. 
+2. Second, users can upload variant call format (VCF) files from their analysis pipelines as input to GeneVar. GeneVar will output clinically relevant information, as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. 
+3. Third, users can submit phenotype or disease ontology terms and retrieve relevant structural variants.
 
 ## Web-App Preview
 
