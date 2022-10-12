@@ -61,6 +61,14 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
   <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO.png">
 </p>
 
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_SV.png">
+</p>
+
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_onto_plot.png">
+</p>
+
 
 ## DNAnexus Implementation
 
