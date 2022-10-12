@@ -12,7 +12,11 @@ Tim Hefferon (Lead),	Rupesh Kesharwani,	Kimberly Walker,	Jędrzej Kubica,	Jean M
 
 ## Goal
 
-[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
+[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis.
+As clinicians and patients are often comfortable using interactive web-pages, GenVar uses the shiny framework for web tool portability and the processing power of the R data analysis language. The three modes of inquiry for GenVar, namely, by gene ID, VCF file, or phenotype, are intuitive and simple. A doctor or patient can use GenVar to benefit from databases such as dbVar, ClinVar, and OMIM with less time spent looking at raw data in an overwhelming genomic coordinate format.
+
+
+GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
 
 [Clinical SV](https://github.com/collaborativebioinformatics/clinical_SVs) is an open access software that can annotate variant call format (VCF) files with clinically relavant information as well as provide useful visualizations such as disease ontology plots.
 
@@ -84,5 +88,5 @@ Walker K, Kalra D, Lowdon R et al. The third international hackathon for applyin
   - [ ] Server
   - [ ] Command Line Tool
   
-  
+## Hackathon Sponsor Thank You  
 ![Thank you Slide](https://user-images.githubusercontent.com/72624236/195353714-e8e0a056-81df-444a-b0d5-157a9bbb36c6.jpg)
