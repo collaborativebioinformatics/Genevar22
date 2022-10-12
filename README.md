@@ -22,11 +22,11 @@ GeneVar takes a gene name as an input or ID and produces a report that informs t
 
 [GeneVar2](https://github.com/collaborativebioinformatics/GeneVar2) was the integration of these two apps which work together to facilitate reporting of structural variations data. GeneVar tool is intended to have a clinical focus, informing the interpretation of SV pertaining to the gene name. In addition, GeneVar gives the user the option to upload genotyping data and produces a report, a file, and a genome browser session that informs the user of all SVs overlapping the gene, including any non-coding regulatory elements affecting expression of the gene.
 
-**GeneVar(2022 update)** is the continuation of the previous iterations of GeneVar. This version has been converted successfully into a DNANexus Applet which can be hosted and used through the DNANexus API or UI. Additional functionality was added to this version of GeneVar by implementing the ability for users to look for SVs based upon disease/phenotype ontology.
+[GeneVar2022](https://github.com/collaborativebioinformatics/Genevar22) is the continuation of the previous iterations of GeneVar. This version has been converted successfully into a DNANexus Applet which can be hosted and used through the DNANexus API or UI. Additional functionality was added to this version of GeneVar by implementing the ability for users to look for SVs based upon disease/phenotype ontology.
 
 ## How it works?
 
-There are three ways to interact with GeneVar(2022 update):
+There are three ways to interact with GeneVar2022 update):
 - First, GeneVar takes a gene name or a gene ID as an input and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene. 
 - Second, users can upload VCF files from their analysis pipelines as an input to GeneVar. GeneVar will output clinically relevant information, as well as provide useful visualizations of disease ontology and enrichment pathway analysis based on SV types. 
 - Third, users can submit phenotype or disease ontology terms (ICD-10) and retrieve relevant SVs. GeneVar will convert the ICD-10 code into the specific disease of interest and then look for phenotype matching said disease. Once all information has been gathered, genes associated with the phenotypes presented in the disease will then be summarized and GeneVar will output the associated genes, the gathered phenotypes, and output all SVs overlapping all the genes associated with the disease as well as any non-coding regulator elements that affect the expression of the genes.
