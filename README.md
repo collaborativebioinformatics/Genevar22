@@ -41,12 +41,21 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 ### Genevar
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://github.com/collaborativebioinformatics/Genevar22/blob/c8418dbc7677163b7f4274ef5ab0e54de4b69412/Screen%20Shot%202022-10-12%20at%202.24.07%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.24.07%20AM.png">
 </p>
 
 ### ClinicalSV
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.00%20AM.png">
+</p>
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.23%20AM.png">
+</p>
 
 ### DPO (ICD-10)
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/8d20be0dc6929a1ee78c071577dbd9b8692a89c3/Screen%20Shot%202022-10-12%20at%202.50.35%20AM.png">
+</p>
 
 
 ## DNAnexus Implementation
