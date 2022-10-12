@@ -98,3 +98,8 @@ Walker K, Kalra D, Lowdon R et al. The third international hackathon for applyin
   
 ## Hackathon Sponsor Thank You  
 ![Thank you Slide](https://user-images.githubusercontent.com/72624236/195353714-e8e0a056-81df-444a-b0d5-157a9bbb36c6.jpg)
+
+<p align="center">
+  <img width="1100" alt="Thank You" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Thank You.png">
+</p>
+
