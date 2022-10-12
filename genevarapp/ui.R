@@ -25,6 +25,8 @@ ui <- dashboardPage(
     #     p('   DSCAM'),
     #     p('   ENSG00000171587.15'),
     #     p('   ENST00000400454.6')),
+    textInput('icd_search', 'ICD-10 Code', 'G10'),
+    actionButton("submit_icd", "Search", icon = icon("search"), class = "btn btn-primary"),
     checkboxGroupInput('svtypes', "SV type", svtypes, svtypes),
     numericInput('size.min', 'Minimum SV size (bp)', 0, 0),
     numericInput('size.max', 'Maximum SV size (bp)', svsize.max, svsize.max),
@@ -82,9 +84,15 @@ ui <- dashboardPage(
                          dataTableOutput('clinicalsv_table'),
                          hr(),
                          plotOutput('clinicalsv_plot')
+                         ),
+                tabPanel("Disease/Phenotype Ontology",
+                         htmlOutput('title_2'),
+                         fluidRow(
+                           splitLayout(cellWidths = c("50%", "50%"), dataTableOutput("gene_list"), dataTableOutput("phenotype_list"))
+                           ),
+                         hr(),
+                         dataTableOutput("comb_vars_table")
                          )
-
-
     )
 
      # bsModal("modalExample", "Your plot", "submit", size = "large",tableOutput("clinicalsvtable"),downloadButton('downloadcsv', 'Download'))

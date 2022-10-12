@@ -8,6 +8,7 @@ library(GenomicRanges)
 library(stringdist)
 library(reticulate)
 library(cowplot)
+library(purrr)
 message('local files')
 message(list.files())
 
@@ -74,7 +75,21 @@ dtify <- function(df){
                              variant_id, '" target="_blank">', variant_id, '</a>'))
 }
 
+## function to add links to the Gene Table
+dtify_gene <- function(df){
+  if(nrow(df) == 0) return()
+  df = df %>% mutate(OMIM=paste0('<a href="https://www.genenames.org/tools/search/#!/genes?query=', `entrez-gene-symbol`, '" target="_blank">OMIM:', `entrez-gene-symbol`, '</a>'),
+                     GTEx=paste0('<a href="https://gtexportal.org/home/gene/', `entrez-gene-symbol`, '" target="_blank">GTEx:', `entrez-gene-symbol`, '</a>'),
+                     gnomAD=paste0('<a href="https://gnomad.broadinstitute.org/gene/', `entrez-gene-symbol`, '" target="_blank">gnomAD:', `entrez-gene-symbol`, '</a>'))
+  return(df)
+}
 
+## function to add links to the Phenotype Table
+dtify_phenotypes <- function(df){
+  if(nrow(df) == 0) return()
+  df = df %>% mutate(`HPO-ID URL`=paste0('<a href="https://hpo.jax.org/app/browse/term/', `HPO-id`, '" target="_blank">HPO:', `HPO-id`, '</a>'))
+  return(df)
+}
 
 ## server side of the app
 server <- function(input, output, session) {
@@ -171,7 +186,6 @@ server <- function(input, output, session) {
   })
 
   ## clinical sv ----------------------
-
   observe({
     shinyjs::toggleState("submit", !is.null(input$file) && input$file != "")
   })
@@ -212,6 +226,8 @@ server <- function(input, output, session) {
       system(paste("Rscript annotate_vcf.R",in.vcf,annot.rdata,out.vcf,out.csv,sep = " "))
       incProgress(0.5, detail = "50% complete")
       file.create("input_location.txt")
+      message("File Datapath:", input$file$datapath)
+      message("File: ", input$file)
       writeLines(input$file$datapath, "input_location.txt")
       #source_python('retrieve.py')
       incProgress(0.75, detail = "75% complete")
@@ -251,10 +267,87 @@ server <- function(input, output, session) {
     #     ))
     # })
   })
+  
+  
   output$clinicalsv_table <- renderDataTable({
     datatable(clinicalsv(),
               options = list(scrollX=TRUE, scrollCollapse=TRUE))
   })
+  
+  # ---------------------------------
+  # ICD-10 Disease/Phenotype to Genes
+  # ---------------------------------
+  observe({
+    message(input$submit_icd)
+    shinyjs::toggleState("submit_icd", !is.null(input$icd_search) && input$icd_search != "")
+  })
+  
+  icd_to_genes <- eventReactive(input$submit_icd, {
+    message("Entering ICD to Genes")
+    updateTabsetPanel(session = session, inputId = "tabs", selected = "Disease/Phenotype Ontology")
+    l <- readLines("simplified_phenotype_to_genes.R")
+    n <- length(l)
+    withProgress(message = 'Searching Databases...', value = 0, {
+      for (i in 1:n) {
+        eval(parse(text=l[i]))
+        incProgress(1/n, detail = paste(floor(i/n*100), "% Completed." ))
+      }
+    })
+    message("Genes: ", genes)
+    message("Phenotypes: ", phenotypes)
+    message("Finished Searching Disease/Phenotype")
+    genes <- dtify_gene(genes)
+    phenotypes <- dtify_phenotypes(phenotypes)
+    return(list(genes, phenotypes, disease_name))
+  })
+  
+  output$title_2 = renderText({
+    paste0('<h1>', input$icd_search, ": ", icd_to_genes()[[3]], '</h1>')
+  })
+  
+  output$gene_list <- renderDataTable(
+    datatable(icd_to_genes()[[1]], rownames = FALSE, escape = FALSE, options = list(pageLength=15))
+  )
+  
+  output$phenotype_list <- renderDataTable(
+    datatable(icd_to_genes()[[2]], rownames = FALSE, escape = FALSE, options = list(pageLength=15, searching = TRUE))
+  )
+  
+  selMultiVars <- reactive({
+    genen = icd_to_genes()[[1]]$`entrez-gene-symbol`
+    vars.sel.multi <- data.frame()
+    withProgress(message = 'Compiling all information...', value = 0, {
+      for (i in 1:length(genen)){
+        message(genen[i])
+        ## find gene
+        gene.sel = genes.df %>% filter(gene_id==genen[i] | gene_name==genen[i] | transcript_id==genen[i])
+        if(nrow(gene.sel)==0){
+          message('no gene, return')
+        }
+        ## get variants for the gene's region
+        vars.df = getVars(gene.sel$chr[1], min(gene.sel$start), max(gene.sel$end))
+        message(nrow(vars.df), ' variants for gene: ', genen[i])
+        ## overlap with genes
+        vars.sel = overlapVarsGenes(vars.df, gene.sel)
+        vars.sel <- vars.sel %>% mutate(Entrez_Gene_Symbol = genen[i]) %>%
+          select(chr, start, end, Entrez_Gene_Symbol, variant_id, size, type, af, clinical_sv, clinical_snv, gene_impact)
+        ## filter variants
+        vars.sel.multi <- rbind(vars.sel.multi, vars.sel %>% filter(type %in% input$svtypes,
+                                       size >= input$size.min,
+                                       size <= input$size.max))
+        incProgress(1/i, detail = paste(floor(i/length(genen)*100), "% Completed." ))
+      }
+    })
+    vars.sel.multi <- vars.sel.multi %>% arrange(desc(clinical_sv))
+    return(dtify(vars.sel.multi))
+  })
+  
+  output$comb_vars_table <- renderDataTable(
+    datatable(selMultiVars(),
+              filter='top',
+              rownames=FALSE,
+              escape=FALSE,
+              options=list(pageLength=15, searching=TRUE)))
 
 
   # eventReactive(input$submit, {
