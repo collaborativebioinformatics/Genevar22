@@ -45,28 +45,28 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 ### Genevar
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Genevar.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Genevar.png">
 </p>
 
 ### ClinicalSV
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV1.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV1.png">
 </p>
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV2.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV2.png">
 </p>
 
 ### DPO (ICD-10)
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO.png">
 </p>
 
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_SV.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_SV.png">
 </p>
 
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_onto_plot.png">
+  <img width="1100" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO_onto_plot.png">
 </p>
 
 
