@@ -12,7 +12,11 @@ Tim Hefferon (Lead),	Rupesh Kesharwani,	Kimberly Walker,	Jędrzej Kubica,	Jean M
 
 ## Goal
 
-[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis. GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
+[GeneVar](https://github.com/collaborativebioinformatics/GeneVar) is an open-access, gene centric data browser for structural variants (SVs) analysis.
+As clinicians and patients are often comfortable using interactive web-pages, GenVar uses the shiny framework for web tool portability and the processing power of the R data analysis language. The three modes of inquiry for GenVar, namely, by gene ID, VCF file, or phenotype, are intuitive and simple. A doctor or patient can use GenVar to benefit from databases such as dbVar, ClinVar, and OMIM with less time spent looking at raw data in an overwhelming genomic coordinate format.
+
+
+GeneVar takes a gene name as an input or ID and produces a report that informs the user of all SVs overlapping the gene and any non-coding regulatory elements affecting expression of the gene.
 
 [Clinical SV](https://github.com/collaborativebioinformatics/clinical_SVs) is an open access software that can annotate variant call format (VCF) files with clinically relavant information as well as provide useful visualizations such as disease ontology plots.
 
@@ -41,20 +45,20 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 ### Genevar
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.24.07%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Genevar.png">
 </p>
 
 ### ClinicalSV
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.00%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV1.png">
 </p>
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.23%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV2.png">
 </p>
 
 ### DPO (ICD-10)
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/8d20be0dc6929a1ee78c071577dbd9b8692a89c3/Screen%20Shot%202022-10-12%20at%202.50.35%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO.png">
 </p>
 
 
@@ -83,3 +87,6 @@ Walker K, Kalra D, Lowdon R et al. The third international hackathon for applyin
 - [ ] Permanently Hosted Application
   - [ ] Server
   - [ ] Command Line Tool
+  
+## Hackathon Sponsor Thank You  
+![Thank you Slide](https://user-images.githubusercontent.com/72624236/195353714-e8e0a056-81df-444a-b0d5-157a9bbb36c6.jpg)
