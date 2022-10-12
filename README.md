@@ -40,6 +40,9 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 ## Web-App Preview
 
 ### Genevar
+<p align="center">
+  <img width="400" alt="Genevar Screen" src="https://github.com/collaborativebioinformatics/Genevar22/blob/c8418dbc7677163b7f4274ef5ab0e54de4b69412/Screen%20Shot%202022-10-12%20at%202.24.07%20AM.png">
+</p>
 
 ### ClinicalSV
 
