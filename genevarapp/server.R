@@ -9,6 +9,9 @@ library(stringdist)
 library(reticulate)
 library(cowplot)
 library(purrr)
+library(ICD10gm)
+library(ontologyIndex)
+library(ontologyPlot)
 message('local files')
 message(list.files())
 
@@ -284,20 +287,27 @@ server <- function(input, output, session) {
   
   icd_to_genes <- eventReactive(input$submit_icd, {
     message("Entering ICD to Genes")
-    updateTabsetPanel(session = session, inputId = "tabs", selected = "Disease/Phenotype Ontology")
-    l <- readLines("simplified_phenotype_to_genes.R")
-    n <- length(l)
-    withProgress(message = 'Searching Databases...', value = 0, {
-      for (i in 1:n) {
-        eval(parse(text=l[i]))
-        incProgress(1/n, detail = paste(floor(i/n*100), "% Completed." ))
-      }
-    })
-    message("Genes: ", genes)
-    message("Phenotypes: ", phenotypes)
-    message("Finished Searching Disease/Phenotype")
-    genes <- dtify_gene(genes)
-    phenotypes <- dtify_phenotypes(phenotypes)
+    if (!is_icd_code(input$icd_search)){ 
+      message("ICD Code is Incorrect.")
+      genes <- data.frame()
+      phenotypes <- data.frame()
+      disease_name <- "This ICD-10 Code Does Not Exist."
+    } else {
+      updateTabsetPanel(session = session, inputId = "tabs", selected = "Disease/Phenotype Ontology")
+      l <- readLines("simplified_phenotype_to_genes.R")
+      n <- length(l)
+      withProgress(message = 'Searching Databases...', value = 0, {
+        for (i in 1:n) {
+          eval(parse(text=l[i]))
+          incProgress(1/n, detail = paste(floor(i/n*100), "% Completed." ))
+        }
+      })
+      message("Genes: ", genes)
+      message("Phenotypes: ", phenotypes)
+      message("Finished Searching Disease/Phenotype")
+      genes <- dtify_gene(genes)
+      phenotypes <- dtify_phenotypes(phenotypes) 
+    }
     return(list(genes, phenotypes, disease_name))
   })
   
@@ -348,6 +358,11 @@ server <- function(input, output, session) {
               rownames=FALSE,
               escape=FALSE,
               options=list(pageLength=15, searching=TRUE)))
+  
+  output$dpo_plot <- renderPlot({
+    data(hpo)
+    onto_plot(hpo, icd_to_genes()[[2]]$`HPO-id`)
+  },height = 1500)
 
 
   # eventReactive(input$submit, {

@@ -50,7 +50,7 @@ message("Token Obtained: ", token)
 # Access ICD API
 message("Querying the ICD-10 Database for Disease/Phenotype Associated with ICD-10 Code.")
 uri <- "https://id.who.int/icd/release/10/"
-input_icdnumber <- "G10"
+input_icdnumber <- ICD_code
 res <- httr::content(httr::GET(paste0(uri,input_icdnumber), httr::add_headers(c('accept'='application/json', 
                                                                 'API-Version'='v2',
                                                                 'Accept-Language'='en',
@@ -58,15 +58,27 @@ res <- httr::content(httr::GET(paste0(uri,input_icdnumber), httr::add_headers(c(
 disease_name <- res$title$`@value`
 message("Disease Name: ", disease_name)
 
+# Another Option is use OMIM API
+uri <- "https://api.omim.org/api/clinicalSynopsis/search?search="
+omim_api_key <- "&apiKey=foc5LrgzSgq8wKL7Cvnwgg"
+disease_query <- gsub(' ', '+', disease_name)
+uri_end <- "&format=json&format=clinicalSynopsis&start=0&limit=100&operator=AND"
+request_url <- paste0(uri, disease_query, uri_end, omim_api_key)
+res <- httr::content(httr::GET(request_url, httr::add_headers('Content-Type'='application/json;charset=utf-8')))
+query_hpo <- c()
+for (i in 1:res$omim$searchResponse$totalResults) {
+  query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber))
+}
+
 # We have OMIM Files
-message("Reading in OMIM Files...")
-mim_titles<-read.table("mimTitles.tsv", sep = "\t", header = TRUE, fill = TRUE, comment.char = '', quote = '')
-message("OMIM Files Successfully Loaded.")
+#message("Reading in OMIM Files...")
+#mim_titles<-read.table("mimTitles.tsv", sep = "\t", header = TRUE, fill = TRUE, comment.char = '', quote = '')
+#message("OMIM Files Successfully Loaded.")
 # Look for the Disease within our OMIM File
-query_hpo <- mim_titles %>% filter(grepl(toupper(disease_name), Preferred_Title)) %>% dplyr::select(MIM_Number) %>% mutate(MIM_Number = paste("OMIM", MIM_Number, sep = ":"))
+#query_hpo <- mim_titles %>% filter(grepl(toupper(disease_name), Preferred_Title)) %>% dplyr::select(MIM_Number) %>% mutate(MIM_Number = paste("OMIM", MIM_Number, sep = ":"))
 
 # Find the OMIM IDs associated with the Disease and query the HPO
-hpo_result <- hpo %>% filter(`disease-ID for link` %in% unlist(unname(as.list(query_hpo))))
+hpo_result <- hpo %>% filter(`disease-ID for link` %in% query_hpo)
 genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()
 phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()
 

@@ -2,7 +2,6 @@ suppressWarnings(suppressMessages(library(tidyverse, quietly = T)))
 suppressWarnings(suppressMessages(library(dplyr, quietly = T)))
 suppressWarnings(suppressMessages(library(httr, quietly = T)))
 suppressWarnings(suppressMessages(library(ICD10gm, quietly = T)))
-if (!is_icd_code(input$icd_search)){ message("ICD Code is Incorrect.")}
 options(timeout=600)
 hpo <- read.table('http://purl.obolibrary.org/obo/hp/hpoa/phenotype_to_genes.txt', header = F, sep = '\t')
 names(hpo) <- c("HPO-id", "HPO label", "entrez-gene-id", "entrez-gene-symbol", "Additional Info from G-D source", "G-D source", "disease-ID for link")
@@ -19,8 +18,16 @@ uri <- "https://id.who.int/icd/release/10/"
 input_icdnumber <- input$icd_search
 res <- httr::content(httr::GET(paste0(uri,input_icdnumber), httr::add_headers(c('accept'='application/json', 'API-Version'='v2','Accept-Language'='en','Authorization'=paste("Bearer", token)))))
 disease_name <- res$title$`@value`
-mim_titles<-read.table("mimTitles.tsv", sep = "\t", header = TRUE, fill = TRUE, comment.char = '', quote = '')
-query_hpo <- mim_titles %>% filter(grepl(toupper(disease_name), Preferred_Title)) %>% dplyr::select(MIM_Number) %>% mutate(MIM_Number = paste("OMIM", MIM_Number, sep = ":"))
-hpo_result <- hpo %>% filter(`disease-ID for link` %in% unlist(unname(as.list(query_hpo))))
+uri <- "https://api.omim.org/api/clinicalSynopsis/search?search="
+omim_api_key <- "&apiKey=foc5LrgzSgq8wKL7Cvnwgg"
+disease_query <- gsub(' ', '+', disease_name)
+uri_end <- "&format=json&format=clinicalSynopsis&start=0&limit=9999&operator=AND"
+request_url <- paste0(uri, disease_query, uri_end, omim_api_key)
+res <- httr::content(httr::GET(request_url, httr::add_headers('Content-Type'='application/json;charset=utf-8')))
+query_hpo <- c()
+for (i in 1:res$omim$searchResponse$totalResults) { query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber)) }
+hpo_result <- hpo %>% filter(`disease-ID for link` %in% query_hpo)
+genes <- data.frame()
+phenotypes <- data.frame()
 genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()
 phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()

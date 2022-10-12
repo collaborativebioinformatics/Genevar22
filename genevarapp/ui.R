@@ -91,7 +91,9 @@ ui <- dashboardPage(
                            splitLayout(cellWidths = c("50%", "50%"), dataTableOutput("gene_list"), dataTableOutput("phenotype_list"))
                            ),
                          hr(),
-                         dataTableOutput("comb_vars_table")
+                         dataTableOutput("comb_vars_table"),
+                         hr(),
+                         plotOutput('dpo_plot')
                          )
     )
 
