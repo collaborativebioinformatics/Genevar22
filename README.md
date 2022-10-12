@@ -45,20 +45,20 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 ### Genevar
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.24.07%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Genevar.png">
 </p>
 
 ### ClinicalSV
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.00%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV1.png">
 </p>
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Screen%20Shot%202022-10-12%20at%202.53.23%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/ClinvarSV2.png">
 </p>
 
 ### DPO (ICD-10)
 <p align="center">
-  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/8d20be0dc6929a1ee78c071577dbd9b8692a89c3/Screen%20Shot%202022-10-12%20at%202.50.35%20AM.png">
+  <img width="400" alt="Genevar Screen" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/DPO.png">
 </p>
 
 
