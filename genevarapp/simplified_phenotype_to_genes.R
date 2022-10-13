@@ -25,9 +25,7 @@ uri_end <- "&format=json&format=clinicalSynopsis&start=0&limit=9999&operator=AND
 request_url <- paste0(uri, disease_query, uri_end, omim_api_key)
 res <- httr::content(httr::GET(request_url, httr::add_headers('Content-Type'='application/json;charset=utf-8')))
 query_hpo <- c()
-for (i in 1:res$omim$searchResponse$totalResults) { query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber)) }
-hpo_result <- hpo %>% filter(`disease-ID for link` %in% query_hpo)
-genes <- data.frame()
-phenotypes <- data.frame()
-genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()
-phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()
+if (res$omim$searchResponse$totalResults != 0) {for (i in 1:res$omim$searchResponse$totalResults) { query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber))}}
+if (res$omim$searchResponse$totalResults != 0) {hpo_result <- hpo %>% filter(`disease-ID for link` %in% query_hpo)}
+if (res$omim$searchResponse$totalResults != 0) {genes <- data.frame() %>% mutate(`entrez-gene-id` = '', `entrez-gene-symbol` = ''); genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()}
+if (res$omim$searchResponse$totalResults != 0) {phenotypes <- data.frame() %>% mutate(`HPO label` = '', `HPO-id` = ''); phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()}

@@ -69,7 +69,7 @@ svsize.max = 1e9
 
 ## function to add links to the variant table
 dtify <- function(df){
-  if(nrow(df) == 0) return()
+  if(nrow(df) == 0) return(df)
   df = df %>% mutate(type=factor(type), coord=paste0(chr, ':', start, '-', end)) %>%
     dplyr::select(-chr, -start, -end) %>%
     dplyr::select(variant_id, coord, type, size, af, everything()) %>%
@@ -89,7 +89,7 @@ dtify_gene <- function(df){
 
 ## function to add links to the Phenotype Table
 dtify_phenotypes <- function(df){
-  if(nrow(df) == 0) return()
+  if(nrow(df) == 0) return(df)
   df = df %>% mutate(`HPO-ID URL`=paste0('<a href="https://hpo.jax.org/app/browse/term/', `HPO-id`, '" target="_blank">HPO:', `HPO-id`, '</a>'))
   return(df)
 }

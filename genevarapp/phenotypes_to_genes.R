@@ -25,10 +25,10 @@ if (!is_icd_code(ICD_code)){
 # Increase timeout warning since this table is massive
 options(timeout=600)
 message("Reading in HPO File...")
-hpo <- read.table('http://purl.obolibrary.org/obo/hp/hpoa/phenotype_to_genes.txt', header = F, sep = '\t')
+hpo_data <- read.table('http://purl.obolibrary.org/obo/hp/hpoa/phenotype_to_genes.txt', header = F, sep = '\t')
 message("HPO File Successfully Loaded.")
-names(hpo) <- c("HPO-id", "HPO label", "entrez-gene-id", "entrez-gene-symbol", "Additional Info from G-D source", "G-D source", "disease-ID for link")
-hpo %>% select(`HPO-id`, `entrez-gene-symbol`, `disease-ID for link`)
+names(hpo_data) <- c("HPO-id", "HPO label", "entrez-gene-id", "entrez-gene-symbol", "Additional Info from G-D source", "G-D source", "disease-ID for link")
+hpo_data %>% select(`HPO-id`, `entrez-gene-symbol`, `disease-ID for link`)
 
 #Leveraging ICD API... Using Credentials from Irenaeus Chan chani@wustl.edu
 token_endpoint = 'https://icdaccessmanagement.who.int/connect/token'
@@ -66,10 +66,19 @@ uri_end <- "&format=json&format=clinicalSynopsis&start=0&limit=100&operator=AND"
 request_url <- paste0(uri, disease_query, uri_end, omim_api_key)
 res <- httr::content(httr::GET(request_url, httr::add_headers('Content-Type'='application/json;charset=utf-8')))
 query_hpo <- c()
-for (i in 1:res$omim$searchResponse$totalResults) {
-  query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber))
+if (res$omim$searchResponse$totalResults != 0){
+  message("Has Results")
+  for (i in 1:res$omim$searchResponse$totalResults) {
+    query_hpo <- append(query_hpo, paste0("OMIM:", res$omim$searchResponse$clinicalSynopsisList[[i]]$clinicalSynopsis$mimNumber))
+  }
+  # Find the OMIM IDs associated with the Disease and query the HPO
+  hpo_result <- hpo_data %>% filter(`disease-ID for link` %in% query_hpo)
+  genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()
+  phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()
+} else {
+  genes <- data.frame() %>% mutate(`entrez-gene-id` = '', `entrez-gene-symbol` = '')
+  phenotypes <- data.frame() %>% mutate(`HPO label` = '', `HPO-id` = '')
 }
-
 # We have OMIM Files
 #message("Reading in OMIM Files...")
 #mim_titles<-read.table("mimTitles.tsv", sep = "\t", header = TRUE, fill = TRUE, comment.char = '', quote = '')
@@ -77,9 +86,5 @@ for (i in 1:res$omim$searchResponse$totalResults) {
 # Look for the Disease within our OMIM File
 #query_hpo <- mim_titles %>% filter(grepl(toupper(disease_name), Preferred_Title)) %>% dplyr::select(MIM_Number) %>% mutate(MIM_Number = paste("OMIM", MIM_Number, sep = ":"))
 
-# Find the OMIM IDs associated with the Disease and query the HPO
-hpo_result <- hpo %>% filter(`disease-ID for link` %in% query_hpo)
-genes <- hpo_result  %>% dplyr::select(`entrez-gene-id`, `entrez-gene-symbol`) %>% unique()
-phenotypes <- hpo_result  %>% dplyr::select(`HPO label`, `HPO-id`) %>% unique()
 
 
