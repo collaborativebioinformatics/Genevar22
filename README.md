@@ -1,9 +1,17 @@
 > ## GeneVar(2022 update)
 <br/>
 
-<p align="center">
+<!-- <p align="center">
   <img width="400" alt="GeneVar22Logo" src="https://user-images.githubusercontent.com/82537630/195183671-b0479eff-2b73-44b5-aae1-a2682d383919.png">
 </p>
+ -->
+<p align="center">
+  <img width="400" alt="PhenoGeneVarSV-logo" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/PhenoGeneVarSV-logo.png">
+</p>
+
+
+![](images/logo.png)
+
 
 ## Contributors (over three hackathons in random order)
 Tim Hefferon (Lead),	Rupesh Kesharwani,	Kimberly Walker,	Jędrzej Kubica,	Jean Monlong,	Irenaeus Chan,	Fritz Sedlazeck,	Ben Busby,	Barry Zorman,	Ahmad Al Khleifat,	 Weiyu Zhou, 	 Tingting Zhao,	 Priya Lakra, Jianzhi (Quentin) Yang, Haowei Du,	 Gaojianyong Wang,	 Divya Kalra, 	 David Henke, 	Neda Ghohabi
@@ -33,7 +41,11 @@ There are three ways to interact with GeneVar2022 update):
 
 
 ## WorkFlow
-<img width="1091" alt="genevar_logo_green" src="https://user-images.githubusercontent.com/82537630/195189567-7220b953-8f89-490d-9dc3-aca30c279656.png">
+<!-- <img width="1091" alt="genevar_logo_green" src="https://user-images.githubusercontent.com/82537630/195189567-7220b953-8f89-490d-9dc3-aca30c279656.png"> -->
+<p align="center">
+  <img width="1100" alt="PhenoGeneVarSV-workflow" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/PhenoGeneVarSV-workflow.png">
+</p>
+
 
 
 ## Background
@@ -99,6 +111,6 @@ Walker K, Kalra D, Lowdon R et al. The third international hackathon for applyin
 ## Hackathon Acknowledgments
 
 <p align="center">
-  <img width="1100" alt="Thank You" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/Thank You.png">
+  <img width="1100" alt="Thank You" src="https://raw.githubusercontent.com/collaborativebioinformatics/Genevar22/main/Images/PhenoGeneVarSV-thankyou.png">
 </p>
 
