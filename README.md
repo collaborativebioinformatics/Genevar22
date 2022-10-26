@@ -86,7 +86,7 @@ Next-generation sequencing (NGS) provides the ability to sequence extended genom
 
 GeneVar2 has been converted into a DNANexus Applet as per instructions provided here: https://documentation.dnanexus.com/getting-started/developer-tutorials/web-app-let-tutorials/running-rstudio-shiny-server-and-apps
 
-To run the GeneVar2 Applet, simply Log into DNANexus, select GeneVar2 from the list of analyses and start the analysis. This GeneVar2 applet is self-contained and all required environment settings have been converted into a Docker for ease-of-use. The applet will take a few minutes to start depending on the availability of the selected Instance Type. 
+To run the GeneVar2 Applet, once youve built the app, cloning the directory structure from here and following the directions above, simply log into DNAnexus or the UK Biobank Research Analysis Platform, select GeneVar2 from the list of analyses and start the analysis. This GeneVar2 applet is self-contained and all required environment settings have been converted into a Docker for ease-of-use. The applet will take a few minutes to start depending on the availability of the selected Instance Type. 
 
 Once the GeneVar2 Applet has started to run. Simply click the provided Worker URL to launch the RShiny Web Application hosted on DNANexus and use GeneVar2 as described previously.
 
